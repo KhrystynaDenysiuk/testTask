@@ -45,6 +45,7 @@ import Button from "@/components/Button.vue";
     margin: 0 auto;
     color: #fff;
     z-index: 1;
+
     @media screen and (max-width: 360px) {
       width: 328px;
     }

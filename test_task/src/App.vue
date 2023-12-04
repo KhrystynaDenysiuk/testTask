@@ -2,12 +2,14 @@
 import "@/reset.scss";
 import SectionHeader from "./pages/SectionHeader/SectionHeader.vue";
 import SectionInfo from "./pages/SectionInfo/SectionInfo.vue";
+import Users from "./pages/Users/Users.vue";
 </script>
 
 <template>
   <div id="app">
     <SectionHeader />
     <SectionInfo />
+    <Users />
   </div>
 </template>
 
@@ -23,5 +25,6 @@ import SectionInfo from "./pages/SectionInfo/SectionInfo.vue";
   height: 100vh;
   width: 100%;
   background-color: #f8f8f8;
+  overflow: scroll;
 }
 </style>

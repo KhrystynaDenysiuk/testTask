@@ -7,6 +7,7 @@ const props = defineProps(["title", "variant"]);
     :class="{
       button: true,
       disabled: variant === 'disabled',
+      longButton: variant === 'showMore',
     }"
     type="button"
   >
@@ -31,9 +32,16 @@ button {
     }
   }
   &.disabled {
+    color: #f5f5f5;
     background-color: #b4b4b4;
+    cursor: default;
+    &:hover {
+      background-color: #b4b4b4;
+    }
   }
-
+  &.longButton {
+    width: 120px;
+  }
   &:nth-child(1) {
     margin-right: 10px;
   }
