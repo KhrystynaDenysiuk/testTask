@@ -5,3 +5,40 @@
     url('./assets/fonts/Nunito-Regular/Nunito-Regular.otf') format('otf'),
     url('./assets/fonts/Nunito-Regular/Nunito-Regular.woff') format('woff');
 }
+
+:root {
+  --fk-color-border-focus: none;
+  --fk-color-border: none;
+  --fk-font-family: 'Nunito-Regular';
+  --fk-font-size: 16px;
+  --fk-font-size-input: 16px;
+  --fk-line-height: 26px;
+  --fk-color-error: #CB3D40;
+}
+
+.formkit-help {
+  color: #7e7e7e;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 14px;
+  padding-left: 16px;
+  margin-top: 4px;
+}
+
+[data-type="checkbox"] fieldset.formkit-fieldset, [data-type="radio"] fieldset.formkit-fieldset {
+  border: none;
+  padding: 0;
+}
+
+[data-type="checkbox"] .formkit-input:checked ~ .formkit-decorator .formkit-icon, [data-type="radio"] .formkit-input:checked ~ .formkit-decorator .formkit-icon {
+  color: #03bdd3;
+}
+
+.formkit-form {
+  margin: 50px 0;
+}
+
+// input:placeholder-shown {
+//   border: 1px solid red; /* Red border only if the input is empty */
+// }
+

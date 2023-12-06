@@ -1,6 +1,8 @@
 import Vuex, { StoreOptions } from "vuex";
 import { RootState } from "./types";
 import { users } from "./modules/users/index";
+import { positions } from "./modules/positions/index";
+import { token } from "./modules/token/index";
 
 const store: StoreOptions<RootState> = {
   state: {
@@ -10,6 +12,8 @@ const store: StoreOptions<RootState> = {
   actions: {},
   modules: {
     users,
+    positions,
+    token,
   },
 };
 

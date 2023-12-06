@@ -3,6 +3,7 @@ import "@/reset.scss";
 import SectionHeader from "./pages/SectionHeader/SectionHeader.vue";
 import SectionInfo from "./pages/SectionInfo/SectionInfo.vue";
 import Users from "./pages/Users/Users.vue";
+import FormSignUp from "./pages/FormSignUp/FormSignUp.vue";
 </script>
 
 <template>
@@ -10,6 +11,7 @@ import Users from "./pages/Users/Users.vue";
     <SectionHeader />
     <SectionInfo />
     <Users />
+    <FormSignUp />
   </div>
 </template>
 
@@ -26,5 +28,6 @@ import Users from "./pages/Users/Users.vue";
   width: 100%;
   background-color: #f8f8f8;
   overflow: scroll;
+  overflow-x: hidden;
 }
 </style>

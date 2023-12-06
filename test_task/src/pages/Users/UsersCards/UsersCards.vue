@@ -4,18 +4,19 @@ import { useStore } from "vuex";
 
 import { User } from "@/store/modules/users/types";
 
-const getAbbreviatedData = (data: string) => {
-  return data?.length > 27 ? `${data.slice(0, 27)}...` : data;
-};
-
 const store = useStore();
 
 const users: ComputedRef<readonly User[]> = computed(
   () => store.state.users.users
 );
 
+const getAbbreviatedData = (data: string) => {
+  return data?.length > 27 ? `${data.slice(0, 27)}...` : data;
+};
+
 onMounted(() => {
   store.dispatch("users/getUsers");
+  store.dispatch("token/getToken");
 });
 </script>
 

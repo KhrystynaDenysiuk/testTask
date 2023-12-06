@@ -20,4 +20,28 @@ export const actions: ActionTree<UsersState, RootState> = {
       console.error(error);
     }
   },
+  async addUser({ dispatch }, data) {
+    try {
+      const formData = new FormData();
+      formData.append("position_id", data.position_id);
+      formData.append("name", data.name);
+      formData.append("email", data.email);
+      formData.append("phone", data.phone);
+      formData.append("photo", data.photo[0].file);
+
+      const token = localStorage.getItem("token") || "";
+
+      await fetch(`${BASE_URL}/users`, {
+        method: "POST",
+        headers: {
+          Token: token,
+        },
+        body: formData,
+      });
+
+      dispatch("getUsers", { page: 1 });
+    } catch (error: any) {
+      console.error(error);
+    }
+  },
 };

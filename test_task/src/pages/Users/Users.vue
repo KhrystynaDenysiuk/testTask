@@ -44,7 +44,7 @@ const showMoreUsers = () => {
     align-items: center;
     max-width: 1024px;
     margin: 0 auto;
-    padding: 140px 0;
+    padding-top: 140px;
   }
 }
 </style>
