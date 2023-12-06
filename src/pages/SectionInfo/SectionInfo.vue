@@ -19,7 +19,7 @@ import Button from "@/components/Button.vue";
     </div>
     <img
       class="background-img"
-      src="@/assets/icons/BackgroundColorForMainBlock.png"
+      src="@/assets/icons/BackgroundColorForMainBlock.jpg"
       alt="Background color"
     />
   </div>
