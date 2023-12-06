@@ -1,19 +1,24 @@
 <script lang="ts" setup>
 import { ref } from "vue";
+import { useStore } from "vuex";
+import { ComputedRef, computed, onMounted } from "vue";
 
 import Link from "@/components/Link.vue";
 import Button from "@/components/Button.vue";
 import Input from "@/components/Input.vue";
 import Radio from "@/components/Radio.vue";
 import Photo from "@/components/Photo.vue";
-import { useStore } from "vuex";
-import { ComputedRef } from "vue";
+import Loading from "@/components/Loading.vue";
+
 import { Positions } from "@/store/modules/positions/types";
-import { computed } from "vue";
-import { onMounted } from "vue";
+
+import { XMarkIcon } from "@heroicons/vue/24/outline";
 
 const store = useStore();
+
 const form = ref();
+const loading = ref(false);
+const isAdd = ref(false);
 
 const positions: ComputedRef<Positions[]> = computed(
   () => store.state.positions.positions
@@ -54,20 +59,40 @@ const resetForm = () => {
 };
 
 const submitHandler = (data: any) => {
+  loading.value = true;
   store.dispatch("users/addUser", data);
   resetForm();
+  loading.value = false;
+  isAdd.value = true;
 };
 
 onMounted(() => {
   store.dispatch("positions/getPositions");
 });
+
+const closeUserRegistered = () => {
+  loading.value = true;
+  isAdd.value = false;
+  loading.value = false;
+};
 </script>
 
 <template>
   <div class="main-wrapper">
+    <Loading v-if="loading" />
     <div class="container">
-      <Link :title="'Working with POST request'" />
-      <FormKit type="form" ref="form" :actions="false" @submit="submitHandler">
+      <Link
+        :title="
+          isAdd ? 'User successfully registered' : 'Working with POST request'
+        "
+      />
+      <FormKit
+        v-if="!isAdd"
+        type="form"
+        ref="form"
+        :actions="false"
+        @submit="submitHandler"
+      >
         <Input
           v-for="el in infoFromUser"
           :key="el.label"
@@ -85,7 +110,18 @@ onMounted(() => {
         />
         <Photo />
       </FormKit>
-      <Button :title="'Sign up'" :variant="'showMore'" @click="signUp" />
+      <div v-if="isAdd" class="add-user">
+        <div class="closeUserRegistered" @click="closeUserRegistered">
+          <XMarkIcon class="closeUserRegistered-img" />
+        </div>
+        <img src="@/assets/icons/UserRegistered.png" alt="" />
+      </div>
+      <Button
+        v-if="!isAdd"
+        :title="'Sign up'"
+        :variant="'showMore'"
+        @click="signUp"
+      />
     </div>
   </div>
 </template>
@@ -107,6 +143,21 @@ onMounted(() => {
       flex-direction: column;
       justify-content: space-between;
       margin: 50px 0;
+    }
+    .add-user {
+      img {
+        margin-top: 50px;
+      }
+      .closeUserRegistered {
+        position: relative;
+        display: flex;
+        justify-content: flex-end;
+        height: 20px;
+        width: 100%;
+        .closeUserRegistered-img {
+          cursor: pointer;
+        }
+      }
     }
   }
 }
