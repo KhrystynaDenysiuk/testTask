@@ -25,6 +25,7 @@ const props = defineProps([
     :disabled="disabled"
     :validation="validation"
     :help="help"
+    required="true"
   />
 </template>
 
