@@ -1,6 +1,6 @@
-import { ActionTree } from "vuex";
-import { RootState } from "@/store/types";
-import { UsersState } from "@/store/modules/users/types";
+import type { ActionTree } from "vuex";
+import type { RootState } from "@/store/types";
+import type { UsersState } from "@/store/modules/users/types";
 import { UsersMutations } from "./mutations";
 import { BASE_URL } from "@/baseUrl";
 

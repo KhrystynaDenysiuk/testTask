@@ -1,5 +1,5 @@
-import { MutationTree } from "vuex";
-import { PositionsState } from "./types";
+import type { MutationTree } from "vuex";
+import type { PositionsState } from "./types";
 
 export enum PositionsMutations {
   show_positions = "show_positions",

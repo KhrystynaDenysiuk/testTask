@@ -1,5 +1,5 @@
-import { MutationTree } from "vuex";
-import { UsersState } from "@/store/modules/users/types";
+import type { MutationTree } from "vuex";
+import type { UsersState } from "@/store/modules/users/types";
 
 export enum UsersMutations {
   show_users = "show_users",

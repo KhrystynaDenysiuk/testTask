@@ -1,7 +1,7 @@
-import { ActionTree } from "vuex";
-import { RootState } from "@/store/types";
+import type { ActionTree } from "vuex";
+import type { RootState } from "@/store/types";
 import { BASE_URL } from "@/baseUrl";
-import { TokenState } from "./types";
+import type { TokenState } from "./types";
 
 export const actions: ActionTree<TokenState, RootState> = {
   async getToken(_) {

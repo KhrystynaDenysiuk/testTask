@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { useStore } from "vuex";
-import { ComputedRef, Ref, computed, ref } from "vue";
+import { type ComputedRef, type Ref, computed, ref } from "vue";
 
 import Button from "@/components/Button.vue";
 import Link from "@/components/Link.vue";

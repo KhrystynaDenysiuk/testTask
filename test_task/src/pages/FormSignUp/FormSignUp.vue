@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { ref } from "vue";
 import { useStore } from "vuex";
-import { ComputedRef, computed, onMounted } from "vue";
+import { type ComputedRef, computed, onMounted } from "vue";
 
 import Link from "@/components/Link.vue";
 import Button from "@/components/Button.vue";
@@ -10,7 +10,7 @@ import Radio from "@/components/Radio.vue";
 import Photo from "@/components/Photo.vue";
 import Loading from "@/components/Loading.vue";
 
-import { Positions } from "@/store/modules/positions/types";
+import type { Positions } from "@/store/modules/positions/types";
 
 import { XMarkIcon } from "@heroicons/vue/24/outline";
 

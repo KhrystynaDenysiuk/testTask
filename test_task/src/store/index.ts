@@ -1,5 +1,5 @@
-import Vuex, { StoreOptions } from "vuex";
-import { RootState } from "./types";
+import Vuex, { type StoreOptions } from "vuex";
+import type { RootState } from "./types";
 import { users } from "./modules/users/index";
 import { positions } from "./modules/positions/index";
 import { token } from "./modules/token/index";

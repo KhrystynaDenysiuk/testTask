@@ -1,8 +1,8 @@
-import { ActionTree } from "vuex";
-import { RootState } from "@/store/types";
+import type { ActionTree } from "vuex";
+import type { RootState } from "@/store/types";
+import type { PositionsState } from "./types";
 import { PositionsMutations } from "./mutations";
 import { BASE_URL } from "@/baseUrl";
-import { PositionsState } from "./types";
 
 export const actions: ActionTree<PositionsState, RootState> = {
   async getPositions({ commit }) {

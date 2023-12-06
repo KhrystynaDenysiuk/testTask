@@ -1,8 +1,8 @@
 <script lang="ts" setup>
-import { ComputedRef, computed, onMounted } from "vue";
+import { type ComputedRef, computed, onMounted } from "vue";
 import { useStore } from "vuex";
 
-import { User } from "@/store/modules/users/types";
+import type { User } from "@/store/modules/users/types";
 
 const store = useStore();
 

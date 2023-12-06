@@ -1,25 +1,27 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
-    "target": "ESNext",
-    "useDefineForClassFields": true,
     "module": "ESNext",
+    "target": "ESNext",
     "moduleResolution": "Node",
-    "strict": true,
     "jsx": "preserve",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
+    "useDefineForClassFields": true,
+    "strict": true,
     "esModuleInterop": true,
-    "lib": ["ESNext", "DOM"],
     "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "declaration": true,
+    "resolveJsonModule": true,
     "noEmit": true,
+    "isolatedModules": true,
+    "strictPropertyInitialization": false,
+    "types": ["node", "vue", "vuex"],
+    "lib": ["ESNext", "DOM"],
+    "baseUrl": ".",
     "paths": {
-      "@/*": [
-       "src/*"
-      ]
-     }
+      "@/*": ["src/*"]
+    }
   },
-  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
+  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx","src/**/*.vue", "tests/**/*.ts", "tests/**/*.tsx", "shims-vue.d.ts"],
   "references": [{ "path": "./tsconfig.node.json" }],
   "exclude": ["node_modules"]
 }

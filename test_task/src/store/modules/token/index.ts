@@ -1,8 +1,9 @@
-import { Module } from "vuex";
-import { RootState } from "@/store/types";
+import type { Module } from "vuex";
+import type { RootState } from "@/store/types";
+import type { TokenState } from "./types";
+
 import { getters } from "@/store/modules/token/getters";
 import { actions } from "@/store/modules/token/actions";
-import { TokenState } from "./types";
 
 export const state: TokenState = {
   token: null,
