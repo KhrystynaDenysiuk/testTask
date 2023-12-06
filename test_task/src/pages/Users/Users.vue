@@ -20,14 +20,14 @@ const showMoreUsers = () => {
 </script>
 
 <template>
-  <div class="main-wrapper">
+  <div id="users" class="main-wrapper">
     <div class="container">
       <Link :title="'Working with GET request'" />
       <UsersCards />
       <Button
+        v-if="totalPages !== page"
         :title="'Show more'"
-        :variant="totalPages === page ? 'disabled' : 'showMore'"
-        :disabled="totalPages === page ? true : false"
+        :variant="'showMore'"
         @click="showMoreUsers"
       />
     </div>
@@ -44,7 +44,7 @@ const showMoreUsers = () => {
     align-items: center;
     max-width: 1024px;
     margin: 0 auto;
-    padding-top: 140px;
+    margin-top: 140px;
   }
 }
 </style>

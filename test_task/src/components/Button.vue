@@ -42,8 +42,5 @@ button {
   &.longButton {
     width: 120px;
   }
-  &:nth-child(1) {
-    margin-right: 10px;
-  }
 }
 </style>

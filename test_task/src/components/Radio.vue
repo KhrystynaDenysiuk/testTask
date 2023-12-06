@@ -28,6 +28,8 @@ const props = defineProps(["options", "value", "label", "validation"]);
       font-size: 16px;
       font-weight: 400;
       line-height: 26px;
+      margin-bottom: 14px;
+      padding: 0;
     }
     .formkit-options {
       .formkit-option {

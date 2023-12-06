@@ -78,7 +78,7 @@ const closeUserRegistered = () => {
 </script>
 
 <template>
-  <div class="main-wrapper">
+  <div id="signIn" class="main-wrapper">
     <Loading v-if="loading" />
     <div class="container">
       <Link
@@ -91,6 +91,7 @@ const closeUserRegistered = () => {
         type="form"
         ref="form"
         :actions="false"
+        #default="{ state: { valid } }"
         @submit="submitHandler"
       >
         <Input
@@ -109,6 +110,15 @@ const closeUserRegistered = () => {
           :validation="'required'"
         />
         <Photo />
+        <div class="button">
+          <Button
+            v-if="!isAdd"
+            :title="'Sign up'"
+            :variant="!valid ? 'disabled' : 'showMore'"
+            :disabled="!valid"
+            @click="signUp"
+          />
+        </div>
       </FormKit>
       <div v-if="isAdd" class="add-user">
         <div class="closeUserRegistered" @click="closeUserRegistered">
@@ -116,12 +126,6 @@ const closeUserRegistered = () => {
         </div>
         <img src="@/assets/icons/UserRegistered.png" alt="" />
       </div>
-      <Button
-        v-if="!isAdd"
-        :title="'Sign up'"
-        :variant="'showMore'"
-        @click="signUp"
-      />
     </div>
   </div>
 </template>
@@ -136,13 +140,12 @@ const closeUserRegistered = () => {
     align-items: center;
     max-width: 1024px;
     margin: 0 auto;
-    padding-top: 140px;
+    margin-top: 140px;
     padding-bottom: 100px;
-    #addUser-form {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      margin: 50px 0;
+    .formkit-form {
+      .button {
+        text-align: center;
+      }
     }
     .add-user {
       img {

@@ -9,10 +9,14 @@ import Button from "@/components/Button.vue";
         <img alt="Logo" class="logo__img" src="@/assets/icons/Logo.svg" />
         <span class="logo__title">TESTTASK</span>
       </div>
-      <div class="buttons">
-        <Button :title="'Users'" />
-        <Button :title="'Sign up'" />
-      </div>
+      <ol class="menu">
+        <li>
+          <a href="#users"><Button :title="'Users'" /></a>
+        </li>
+        <li>
+          <a href="#signIn"><Button :title="'Sign up'" /></a>
+        </li>
+      </ol>
     </div>
   </div>
 </template>
@@ -41,6 +45,14 @@ import Button from "@/components/Button.vue";
     .logo {
       display: flex;
       align-items: center;
+    }
+    .menu {
+      display: flex;
+      li {
+        &:first-child {
+          margin-right: 10px;
+        }
+      }
     }
   }
 }

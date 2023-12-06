@@ -15,7 +15,7 @@ import Button from "@/components/Button.vue";
           Development keeps evolving.
         </p>
       </div>
-      <Button :title="'Sign up'" />
+      <a href="#signIn"><Button :title="'Sign up'" /></a>
     </div>
     <img
       class="background-img"
